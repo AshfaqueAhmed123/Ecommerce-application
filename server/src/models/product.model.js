@@ -2,27 +2,27 @@ import mongoose,{Schema,model} from "mongoose"
 
 const productSchema = new Schema({
     title:{
-        type:string,
+        type:String,
         required:true,
     },
     description:{
-        type:string,
+        type:String,
         required:true,
     },
     images:[{
        type:String,
-       required:true,
+    //    required:true,
     }],
     videos:[{
         type:String,
-        required:true,
+        // required:true,
     }],
     price:{
-        type:string,
+        type:Number,
         required:true,
     },
     discount:{
-        type:string,
+        type:Number,
         required:true,
     },
     owner:{
