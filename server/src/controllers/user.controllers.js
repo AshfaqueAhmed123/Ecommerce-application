@@ -20,8 +20,10 @@ const generateAccessAndRefreskTokens = async (userId) => {
 
 const register = async (req, res) => {
     try {
-        const { fullName, username, email, password, role } = req.body;
-        if (!fullName || !username || !email || !password || !role) {
+        console.log(req.body);
+        
+        const { fullName, username, email, password } = req.body;
+        if (!fullName || !username || !email || !password) {
             return res.status(400).json(
                 new ApiError(400, "all fields are required")
             )
@@ -36,7 +38,7 @@ const register = async (req, res) => {
             )
         }
         const user = await User.create({
-            fullName, username, email, password, role
+            fullName, username, email, password, role:"customer"
         })
 
         if (!user) {
