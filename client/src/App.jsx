@@ -1,7 +1,13 @@
 import React from 'react'
+import { fetchAll } from './services/product/product.services.js'
+
 const App = () => {
 
   (async()=>{    
+    
+    await fetchAll({
+      limit:100
+    })
 
   })()
 

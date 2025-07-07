@@ -24,7 +24,7 @@ const orderSchema = new Schema({
             "easypaisa",
             "jazzcash"
         ],
-        required:true
+        default:"easypaisa"
     },
     shipping_cost:{
         type:Number,
@@ -37,7 +37,7 @@ const orderSchema = new Schema({
     status:{
         type:String,
         enum:["pending", "delivered", "processing", "compeleted"],
-        required:true
+        default:"pending",
     },
 },{
     timestamps:true,
